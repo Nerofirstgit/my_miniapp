@@ -1,0 +1,11 @@
+node_modules/
+coverage/
+*.log
+.DS_Store
+project.private.config.json
+private.*.key
+.env
+.env.*
+!.env.example
+*.pem
+asset-backups/

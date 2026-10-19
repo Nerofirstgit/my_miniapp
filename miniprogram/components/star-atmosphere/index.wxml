@@ -1,0 +1,4 @@
+<view class="ui-box atmosphere-host {{rendered ? 'is-rendered' : ''}}" aria-hidden="true">
+  <view class="ui-box atmosphere-fallback"><view class="ui-box fallback-stars" /></view>
+  <canvas class="atmosphere-canvas" type="webgl" binderror="canvasError" aria-hidden="true" />
+</view>

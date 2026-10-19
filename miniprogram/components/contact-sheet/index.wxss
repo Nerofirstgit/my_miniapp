@@ -1,0 +1,20 @@
+.ui-box { box-sizing: border-box; }
+.overlay { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 100; display: flex; align-items: flex-end; }
+.mask { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,.72); }
+.sheet-scroll { position: relative; width: 100%; height: 76vh; max-height: 1000rpx; border-radius: 28rpx 28rpx 0 0; background: #202020; }
+.sheet { box-sizing: border-box; width: 100%; padding: 40rpx 36rpx calc(36rpx + env(safe-area-inset-bottom)); color: #f5f5ef; }
+.heading { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; }
+.title { font-size: 38rpx; font-weight: 700; }
+.ui-button { margin: 0; padding: 0; background: none; color: inherit; border-radius: 0; font-size: 26rpx; }
+.ui-button::after { border: 0; }
+/* Component styles are isolated from app.wxss. */
+.ui-button.tap-pressed { opacity: .72; }
+.ui-button.close { width: auto; margin: 0; padding: 0; flex-shrink: 0; min-width: 88rpx; min-height: 88rpx; line-height: 88rpx; color: #c0c0b8; }
+.hint { display: block; margin: 12rpx 0 24rpx; color: #c0c0b8; font-size: 26rpx; line-height: 1.8; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16rpx; padding: 26rpx 0; border-top: 1rpx solid #ffffff24; }
+.row-copy { flex: 1; min-width: 0; }
+.label { display: block; margin-bottom: 8rpx; color: #c0c0b8; font-size: 23rpx; }
+.value { display: block; font-size: 28rpx; line-height: 1.6; overflow-wrap: break-word; }
+.email { font-size: 26rpx; }
+.ui-button.action { width: auto; margin: 0; padding: 0; flex-shrink: 0; min-height: 88rpx; line-height: 88rpx; color: #e4ff4e; }
+.ui-button.qr-action { width: 100%; margin: 14rpx 0 0; padding: 0; min-height: 88rpx; line-height: 88rpx; border: 1rpx solid #ffffff40; border-radius: 10rpx; }

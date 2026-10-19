@@ -1,0 +1,13 @@
+.ui-box { box-sizing: border-box; }
+:host { display: block; width: 100%; height: 100%; pointer-events: none; }
+.atmosphere-host, .atmosphere-fallback, .atmosphere-canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
+.atmosphere-host { overflow: hidden; background: #080808; }
+.atmosphere-fallback { background: radial-gradient(ellipse at 15% 22%, rgba(172,172,172,.17), transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(172,172,172,.13), transparent 60%); }
+.fallback-stars { position: absolute; left: 12%; top: 9%; width: 2rpx; height: 2rpx; border-radius: 50%; background: rgba(255,255,255,.6); box-shadow: 180rpx 65rpx rgba(255,255,255,.6), 310rpx 195rpx rgba(255,255,255,.2), 74rpx 306rpx rgba(255,255,255,.4), 486rpx 134rpx rgba(255,255,255,.7), 383rpx 420rpx rgba(255,255,255,.6), 190rpx 561rpx rgba(255,255,255,.3), 543rpx 621rpx rgba(255,255,255,.5), 279rpx 783rpx rgba(255,255,255,.8), 53rpx 909rpx rgba(255,255,255,.5), 463rpx 1080rpx rgba(255,255,255,.4), 123rpx 1172rpx rgba(255,255,255,.4), 589rpx 1233rpx rgba(255,255,255,.6), 420rpx 914rpx 2rpx 1rpx rgba(255,255,255,.4), 560rpx 367rpx 2rpx 1rpx rgba(255,255,255,.3), 240rpx 170rpx 2rpx 1rpx rgba(255,255,255,.3); }
+.atmosphere-canvas { opacity: 0; }
+.is-rendered .atmosphere-canvas { opacity: 1; }
+.is-rendered .atmosphere-fallback { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .atmosphere-canvas { display: none; }
+  .is-rendered .atmosphere-fallback { opacity: 1; }
+}

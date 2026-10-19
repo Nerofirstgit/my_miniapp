@@ -1,0 +1,40 @@
+// View-layer equivalent of character-opacity.ts; keep the formula in parity.
+function opacity(progress, index, count) {
+  if (index < 0) return 1;
+  if (!progress || progress <= 0) return 0.12;
+  if (progress >= 1) return 1;
+  var duration = 1 + Math.max(0, count - 1) * 0.06;
+  var fade = Math.min(1, Math.max(0, progress * duration - index * 0.06));
+  return Math.round((0.12 + 0.88 * fade) * 1000) / 1000;
+}
+
+// The faded band is only 1 / 0.06 characters wide. Keep the rest as strings
+// instead of maintaining a native node (and animation) for every character.
+function runs(run, progress) {
+  if (!run || !run.text) return [];
+  if (!run.count || progress >= 1) return [{ id: 'bright', text: run.text, opacity: 1 }];
+  if (!progress || progress <= 0) return [{ id: 'dim', text: run.text, opacity: 0.12 }];
+  var result = [];
+  var leading = '';
+  for (var i = 0; i < run.characters.length; i++) {
+    var character = run.characters[i];
+    var last = result.length ? result[result.length - 1] : null;
+    // Whitespace has no ink. Attach it without breaking otherwise equal runs.
+    if (character.opacityIndex < 0) {
+      if (last) last.text += character.text;
+      else leading += character.text;
+      continue;
+    }
+    var value = opacity(progress, character.opacityIndex, run.count);
+    if (last && last.opacity === value) last.text += character.text;
+    else result.push({
+      id: value === 1 ? 'bright' : (value === 0.12 ? 'dim' : 'char-' + character.id),
+      text: leading + character.text,
+      opacity: value
+    });
+    leading = '';
+  }
+  return result;
+}
+
+module.exports = { opacity: opacity, runs: runs };

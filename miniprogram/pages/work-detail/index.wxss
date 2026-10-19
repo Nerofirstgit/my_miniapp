@@ -1,0 +1,14 @@
+.detail { padding-top: 40rpx; }
+.category { display: block; margin-bottom: 18rpx; color: #e4ff4e; font-size: 25rpx; }
+.project-title { display: block; margin-bottom: 22rpx; font-size: 62rpx; font-weight: 700; line-height: 1.35; letter-spacing: -2rpx; }
+.ui-button.preview { display: block; width: 100%; margin: 40rpx 0; padding: 0; font-weight: 400; }
+.cover { display: block; width: 100%; border-radius: 12rpx; background: #252525; }
+.preview-hint { display: block; margin-top: 14rpx; text-align: center; color: #b2b2aa; font-size: 23rpx; }
+.cover-fallback { margin: 40rpx 0; }
+.web-project { margin-top: 36rpx; padding: 28rpx; border: 1rpx solid #ffffff30; border-radius: 12rpx; }
+.web-title { display: block; margin-bottom: 12rpx; font-size: 30rpx; font-weight: 600; }
+.small { font-size: 25rpx; }
+.url { display: block; margin: 10rpx 0 24rpx; color: #c6c6bd; font-size: 25rpx; overflow-wrap: break-word; }
+.detail-actions { display: flex; gap: 16rpx; margin-top: 16rpx; }
+.detail-actions .ui-button { flex: 1; }
+.missing { padding-top: 140rpx; }

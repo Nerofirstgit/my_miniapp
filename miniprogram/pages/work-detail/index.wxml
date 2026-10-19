@@ -1,0 +1,35 @@
+<page-meta page-style="{{contactVisible ? 'overflow: hidden;' : ''}}" />
+<view wx:if="{{project}}" class="ui-box page detail">
+  <text class="category">{{project.category}}</text>
+  <text class="project-title">{{project.title}}</text>
+  <text class="paragraph">{{project.description}}</text>
+  <view class="ui-box tags"><text wx:for="{{project.tags}}" wx:key="*this" class="tag">{{item}}</text></view>
+  <button hover-class="tap-pressed" wx:if="{{!coverFailed}}" class="ui-box ui-button preview" bindtap="showCover" aria-label="放大查看{{project.title}}封面">
+    <image class="ui-box cover" src="{{project.cover}}" mode="widthFix" binderror="onCoverError" aria-label="{{project.coverAlt}}" />
+    <text class="preview-hint">点击图片放大查看</text>
+  </button>
+  <view wx:else="" class="ui-box image-placeholder cover-fallback">封面暂时无法显示，可继续阅读项目介绍。</view>
+  <view class="ui-box section">
+    <text class="section-title">项目介绍</text>
+    <text class="paragraph">{{project.introduction}}</text>
+    <view class="ui-box web-project">
+      <text class="web-title">查看项目网页</text>
+      <text class="paragraph small">复制网址后，在浏览器中打开完整演示。</text>
+      <text class="url" user-select="{{true}}">{{project.url}}</text>
+      <button hover-class="tap-pressed" class="ui-box ui-button secondary" bindtap="copyProjectUrl">复制项目网址</button>
+    </view>
+  </view>
+  <view class="ui-box section">
+    <text class="section-title">也想实现这样的作品？</text>
+    <text class="paragraph">聊聊你的想法，一起梳理需求，让产品落地。</text>
+    <button hover-class="tap-pressed" class="ui-box ui-button primary" bindtap="showContact">联系康彤</button>
+    <view class="ui-box detail-actions"><button hover-class="tap-pressed" class="ui-box ui-button secondary" open-type="share">分享这个作品</button><button hover-class="tap-pressed" class="ui-box ui-button secondary" bindtap="goHome">返回首页</button></view>
+  </view>
+  <view class="ui-box footer">天工开物工作室 · 康彤</view>
+</view>
+<view wx:else="" class="ui-box page missing">
+  <text class="section-title">没有找到这个作品</text>
+  <text class="paragraph">这个作品链接可能已经失效，回到首页看看其他作品吧。</text>
+  <button hover-class="tap-pressed" class="ui-box ui-button primary" bindtap="goHome">返回首页</button>
+</view>
+<contact-sheet class="contact-sheet" visible="{{contactVisible}}" bindclose="closeContact" />

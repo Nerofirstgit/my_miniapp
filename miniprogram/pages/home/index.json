@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "康彤 · 个人作品集",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "contact-sheet": "/components/contact-sheet/index",
+    "distorted-title": "/components/distorted-title/index",
+    "star-atmosphere": "/components/star-atmosphere/index"
+  }
+}

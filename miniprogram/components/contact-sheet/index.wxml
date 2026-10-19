@@ -1,0 +1,25 @@
+<view wx:if="{{visible}}" class="ui-box overlay">
+  <view class="ui-box mask" bindtap="close" catchtouchmove="keepOpen" />
+  <scroll-view class="sheet-scroll" scroll-y="{{true}}" catchtap="keepOpen">
+  <view class="ui-box sheet" aria-role="dialog" aria-modal="true" aria-label="联系康彤">
+    <view class="ui-box heading">
+      <text class="title">一起把想法实现。</text>
+      <button hover-class="tap-pressed" class="ui-box ui-button close" bindtap="close" aria-label="关闭联系方式">关闭</button>
+    </view>
+    <text class="hint">有新的产品、定制需求，或想聊聊技术与设计，欢迎联系。</text>
+    <view class="ui-box row">
+      <view class="ui-box row-copy"><text class="label">电话</text><text class="value" user-select="{{true}}">{{contact.phoneDisplay}}</text></view>
+      <button hover-class="tap-pressed" class="ui-box ui-button action" bindtap="call">拨打电话</button>
+    </view>
+    <view class="ui-box row">
+      <view class="ui-box row-copy"><text class="label">微信</text><text class="value" user-select="{{true}}">{{contact.wechat}}</text></view>
+      <button hover-class="tap-pressed" class="ui-box ui-button action" bindtap="copyWechat">复制微信号</button>
+    </view>
+    <view class="ui-box row">
+      <view class="ui-box row-copy"><text class="label">邮箱</text><text class="value email" user-select="{{true}}">{{contact.email}}</text></view>
+      <button hover-class="tap-pressed" class="ui-box ui-button action" bindtap="copyEmail">复制邮箱</button>
+    </view>
+    <button hover-class="tap-pressed" class="ui-box ui-button qr-action" bindtap="showQrCode">查看微信二维码</button>
+  </view>
+  </scroll-view>
+</view>

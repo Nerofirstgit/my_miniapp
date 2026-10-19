@@ -1,0 +1,10 @@
+<view class="ui-box title-host {{hero ? 'hero-host' : ''}} {{rendered ? 'is-rendered' : ''}}" aria-label="{{label}}">
+  <view class="ui-box title-fallback">
+    <block wx:if="{{hero}}">
+      <image wx:if="{{!heroImageFailed && source}}" class="ui-box hero-static {{!active ? 'entrance-paused' : ''}}" src="{{source}}" mode="scaleToFill" binderror="heroImageError" aria-hidden="true" />
+      <slot wx:else="" />
+    </block>
+    <text wx:else="" class="section-fallback" aria-hidden="true"><text wx:for="{{fallbackCharacters}}" wx:key="id" class="fallback-character {{item.accent ? 'accent' : ''}}" style="opacity:{{item.opacity}}">{{item.text}}</text></text>
+  </view>
+  <canvas class="title-canvas" type="webgl" style="{{canvasStyle}}" binderror="canvasError" aria-hidden="true" />
+</view>

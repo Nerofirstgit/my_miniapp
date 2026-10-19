@@ -1,0 +1,13 @@
+{
+  "pages": ["pages/home/index", "pages/work-detail/index"],
+  "window": {
+    "navigationBarTitleText": "康彤 · 个人作品集",
+    "navigationBarBackgroundColor": "#111111",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#111111",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
