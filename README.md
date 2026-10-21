@@ -4,7 +4,7 @@
 
 新窗口接手开发时，先阅读 [AGENTS.md](AGENTS.md) 和 [开发交接](docs/HANDOFF.md)，其中记录已确认的需求、实现状态、验证边界及下一步。
 
-当前交接状态（2026-10-19）：按用户要求，两张作品GIF已恢复包内本地路径，不再依赖云存储。恢复文件与原备份SHA-256一致，现有样式、动画条件及静态封面回退未改；64项本地检查通过，源文件约1236KiB。真机连续播放观感待验。详情见 [开发交接](docs/HANDOFF.md)、[素材加载记录](docs/CLOUD-ASSETS.md) 和此前的 [告警验证](docs/RUNTIME-WARNINGS.md)。
+当前交接状态（2026-10-21）：已接入用户确认的首页分享封面（深色星空、荧光黄大标题）和“康彤｜让想法成为好用的产品”标题。64项本地检查通过，源文件约1403KiB；开发者工具已确认分享配置和包内图片加载，手机聊天卡片效果待验，本轮未上传或发布。两张作品GIF仍为包内本地资源，不依赖云存储。详情见 [开发交接](docs/HANDOFF.md)、[素材加载记录](docs/CLOUD-ASSETS.md) 和此前的 [告警验证](docs/RUNTIME-WARNINGS.md)。
 
 ## 本地打开
 
@@ -38,6 +38,7 @@ npm run check
 
 - `miniprogram/data/profile.ts`：姓名、介绍、经历、技能和联系方式。
 - `miniprogram/data/projects.ts`：作品、中文介绍、封面与项目网址。
+- `miniprogram/data/share.ts`：首页分享标题、路径与封面；封面文件为 `miniprogram/assets/share/portfolio.jpg`。
 - `miniprogram/assets/`：本地作品GIF、静态封面、标题、图标、字体、许可证与二维码；两张GIF原备份保留于包外的 `asset-backups/projects/`。来源和可选转换脚本见 [素材来源](docs/ASSET-SOURCES.md)。网站原文件未修改。
 - `miniprogram/app.wxss`：全局样式；页面和联系组件分别维护局部样式。
 

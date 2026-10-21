@@ -1,5 +1,6 @@
 import { contact, experiences, paragraphs, profile, skills } from "../../data/profile";
 import { getProject, projectPath, projects } from "../../data/projects";
+import { portfolioShare } from "../../data/share";
 import { callPhone, copyText, showActionFailure } from "../../utils/actions";
 import { createHomeCopy } from "../../utils/home-copy";
 
@@ -244,5 +245,5 @@ Page({
   call() { callPhone(contact.phone); },
   copyWechat() { copyText(contact.wechat); },
   copyEmail() { copyText(contact.email); },
-  onShareAppMessage() { return { title: "康彤的作品集｜从想法到落地", path: "/pages/home/index" }; },
+  onShareAppMessage() { return { ...portfolioShare }; },
 });

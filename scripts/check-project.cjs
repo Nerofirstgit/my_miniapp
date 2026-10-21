@@ -42,7 +42,7 @@ function inspect(directory) {
   }
 }
 inspect(sourceRoot);
-for (const asset of ['projects/mall.jpg', 'projects/restaurant.jpg', 'wechat.png']) {
+for (const asset of ['projects/mall.jpg', 'projects/restaurant.jpg', 'wechat.png', 'share/portfolio.jpg']) {
   assert.ok(fs.statSync(path.join(sourceRoot, 'assets', asset)).size > 0, `缺少素材 ${asset}`);
 }
 // 这是项目自己的源文件体积预算，最终上传体积仍以开发者工具为准。

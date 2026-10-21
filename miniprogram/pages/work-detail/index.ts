@@ -1,5 +1,6 @@
 import { getProject, projectPath } from "../../data/projects";
 import type { Project } from "../../data/projects";
+import { portfolioShare } from "../../data/share";
 import { copyText, previewImage, showActionFailure } from "../../utils/actions";
 
 Page({
@@ -26,6 +27,6 @@ Page({
     const project = this.data.project;
     return project
       ? { title: `${project.title}｜康彤的作品集`, path: projectPath(project.id), imageUrl: project.cover }
-      : { title: "康彤的个人作品集", path: "/pages/home/index" };
+      : { ...portfolioShare };
   },
 });
